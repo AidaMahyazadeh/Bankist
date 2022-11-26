@@ -68,7 +68,7 @@ const account1 = {
   containerMovements.insertAdjacentHTML("afterbegin",html)
    });
  }
-
+displayMovements(account1.movements);
 
 
 
