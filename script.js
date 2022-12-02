@@ -16,7 +16,7 @@ const account1 = {
     "2022-11-28T10:51:36.790Z",
   ],
   currency: "EUR",
-  locale: "it-IT", // de-DE
+  locale: "it-IT", 
 };
 
 const account2 = {
@@ -157,6 +157,7 @@ const startLogOutTimer=function(){
   const tick=function(){
     const min=String( Math.trunc(time/60)).padStart(2,0);
     const sec=String(time%60).padStart(2,0);
+
  //print remaining time to UI
  labelTimer.textContent=`${min}:${sec}`
  
@@ -171,6 +172,7 @@ const startLogOutTimer=function(){
 }
   //set time to 5 minutes
   let time=300;
+
   //call the timer every seconds
   tick();
  const timer= setInterval(tick,1000);
@@ -186,6 +188,7 @@ btnLogin.addEventListener("click", function (e) {
     (acc) => acc.username === inputLoginUsername.value
   );
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
+
     //display welcome message
     labelWelcome.textContent = `welcome back ${
       currentAccount.owner.split(" ")[0]
@@ -283,8 +286,10 @@ btnClose.addEventListener("click", function (e) {
     const index = accounts.findIndex(
       (acc) => acc.username === currentAccount.username
     );
+
     //delete account
     accounts.splice(index, 1);
+    
     //hide UI
     containerApp.style.opacity = 0;
   }
